@@ -41,7 +41,8 @@ RUN conda install \
 
 ENV C_INCLUDE_PATH="/opt/conda/include/"
 
-RUN apt-get install gcc -y \
+RUN apt-get update \
+    && apt-get install gcc -y \
     && wget "https://downloads.sourceforge.net/project/pysclint/pyhdf/0.8.3/pyhdf-0.8.3.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpysclint%2F&ts=1515213647&use_mirror=cytranet" -O /tmp/pyhdf.tar.gz\
     && cd /tmp \
     && pip install pyhdf.tar.gz \
